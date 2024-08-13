@@ -6,12 +6,12 @@ import Col from "react-bootstrap/Col";
 
 // Sample data
 const subjects = [
-  { id: 1, title: "Subject 1" },
-  { id: 2, title: "Subject 2" },
-  { id: 3, title: "Subject 3" },
-  { id: 4, title: "Subject 4" },
-  { id: 5, title: "Subject 5" },
-  { id: 6, title: "Subject 6" },
+  { id: 1, title: "Subject 1", content: "Lorem Ipsum..." },
+  { id: 2, title: "Subject 2", content: "Lorem Ipsum..." },
+  { id: 3, title: "Subject 3", content: "Lorem Ipsum..." },
+  { id: 4, title: "Subject 4", content: "Lorem Ipsum..." },
+  { id: 5, title: "Subject 5", content: "Lorem Ipsum..." },
+  { id: 6, title: "Subject 6", content: "Lorem Ipsum..." },
   // Add more subjects as needed
 ];
 
@@ -30,7 +30,7 @@ const printRows = () => {
     <Row key={rowIndex}>
       {rowSubjects.map((subject) => (
         <Col key={subject.id} sm={12} md={4}>
-          <SubjectCard title={subject.title} />
+          <SubjectCard title={subject.title} content={subject.content} />
         </Col>
       ))}
     </Row>
