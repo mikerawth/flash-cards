@@ -7,7 +7,7 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Mike's Flash Cards
+          Mike's Company
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -16,7 +16,7 @@ const NavBar = () => {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/flashcards">
-              Explore
+              Flash Cards
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

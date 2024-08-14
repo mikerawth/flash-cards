@@ -9,7 +9,7 @@ const Header = () => {
 
   switch (location.pathname) {
     case "/":
-      title = "Welcome to Mike's Flash Cards";
+      title = "Welcome to Mike's Company";
       description = "This is the home page.";
       break;
     case "/flashcards":
