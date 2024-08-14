@@ -50,11 +50,7 @@ const FlashCards = () => {
   };
 
   return (
-    <div className="FlashCards m-3">
-      <div className="header text-center">
-        <h1 className="title">Flash Cards</h1>
-        <p>Please select a subject you are interested in learning.</p>
-      </div>
+    <>
       <Container>
         <Row className="justify-content-center">
           <Col>
@@ -63,7 +59,7 @@ const FlashCards = () => {
         </Row>
         {printRowsAndCols(filteredSubjects)}
       </Container>
-    </div>
+    </>
   );
 };
 
