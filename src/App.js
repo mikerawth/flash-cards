@@ -24,7 +24,8 @@ const chunkArray = (array, size) => {
   return result;
 };
 
-const printRows = () => {
+// Function to print Rows and Cols
+const printRowsAndCols = () => {
   const rows = chunkArray(subjects, 3); // Split subjects into rows of 3
   return rows.map((rowSubjects, rowIndex) => (
     <Row key={rowIndex}>
@@ -40,7 +41,11 @@ const printRows = () => {
 function App() {
   return (
     <div className="App">
-      <Container>{printRows()}</Container>
+      <div className="header">
+        <h1 className="title">Flash Cards</h1>
+        <p>Please select a subject you are interested in learning.</p>
+      </div>
+      <Container>{printRowsAndCols()}</Container>
     </div>
   );
 }
