@@ -1,8 +1,10 @@
+import React from "react";
 import "./App.css";
-import SubjectCard from "./components/SubjectCard";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import SearchBar from "./components/SearchBar";
+import SubjectCard from "./components/SubjectCard";
 
 // Sample data
 const subjects = [
@@ -39,12 +41,18 @@ const printRowsAndCols = () => {
 };
 
 function App() {
+  const handleSearch = (query) => {
+    console.log("Searching for:", query);
+    // Perform search logic here, such as filtering a list or making an API call
+  };
+
   return (
     <div className="App">
       <div className="header">
         <h1 className="title">Flash Cards</h1>
         <p>Please select a subject you are interested in learning.</p>
       </div>
+      <SearchBar onSearch={handleSearch} />
       <Container>{printRowsAndCols()}</Container>
     </div>
   );
