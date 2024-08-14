@@ -9,8 +9,8 @@ import Header from "./components/Header";
 function App() {
   return (
     <Router>
+      <NavBar />
       <div className="App m-3">
-        <NavBar />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
