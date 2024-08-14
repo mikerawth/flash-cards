@@ -1,6 +1,7 @@
 // backend/server.js
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const apiRoutes = require("./routes/api");
 const flashcardRoutes = require("./routes/flashcards");
 require("dotenv").config();
@@ -10,6 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Adjust this to your frontend URL
+  })
+);
 app.use("/api", apiRoutes);
 app.use("/api/flashcards", flashcardRoutes);
 
