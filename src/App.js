@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -16,8 +16,15 @@ const subjects = [
   // Add more subjects as needed
 ];
 
-// Function to split array into chunks of size n
+// Function to split an array into chunks of size n
 const chunkArray = (array, size) => {
+  if (!Array.isArray(array)) {
+    throw new Error("The first argument must be an array.");
+  }
+  if (typeof size !== "number" || size <= 0) {
+    throw new Error("The size must be a positive number.");
+  }
+
   const result = [];
   for (let i = 0; i < array.length; i += size) {
     result.push(array.slice(i, i + size));
@@ -25,8 +32,12 @@ const chunkArray = (array, size) => {
   return result;
 };
 
-// Function to print Rows and Cols
 const printRowsAndCols = (filteredSubjects) => {
+  if (!Array.isArray(filteredSubjects)) {
+    console.error("Filtered subjects is not an array:", filteredSubjects);
+    return null; // or return an empty array
+  }
+
   const rows = chunkArray(filteredSubjects, 3); // Split subjects into rows of 3
   return rows.map((rowSubjects, rowIndex) => (
     <Row key={rowIndex}>
