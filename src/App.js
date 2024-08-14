@@ -7,7 +7,12 @@ import SubjectCard from "./components/SubjectCard";
 
 // Sample data
 const subjects = [
-  { id: 1, title: "Subject 1", content: "Lorem Ipsum..." },
+  {
+    id: 1,
+    title: "Subject 1",
+    content:
+      "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ...",
+  },
   { id: 2, title: "Subject 2", content: "Lorem Ipsum..." },
   { id: 3, title: "Subject 3", content: "Lorem Ipsum..." },
   { id: 4, title: "Subject 4", content: "Lorem Ipsum..." },
@@ -61,9 +66,9 @@ function App() {
   };
 
   return (
-    <div className="App m-3">
-      <div className="header text-center">
-        <h1 className="title">Flash Cards</h1>
+    <div className="m-3">
+      <div className="text-center">
+        <h1>Flash Cards</h1>
         <p>Please select a subject you are interested in learning.</p>
       </div>
       <Container>
