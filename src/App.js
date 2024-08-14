@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -27,8 +26,8 @@ const chunkArray = (array, size) => {
 };
 
 // Function to print Rows and Cols
-const printRowsAndCols = () => {
-  const rows = chunkArray(subjects, 3); // Split subjects into rows of 3
+const printRowsAndCols = (filteredSubjects) => {
+  const rows = chunkArray(filteredSubjects, 3); // Split subjects into rows of 3
   return rows.map((rowSubjects, rowIndex) => (
     <Row key={rowIndex}>
       {rowSubjects.map((subject) => (
@@ -41,19 +40,29 @@ const printRowsAndCols = () => {
 };
 
 function App() {
+  const [filteredSubjects, setFilteredSubjects] = useState(subjects);
+
   const handleSearch = (query) => {
-    console.log("Searching for:", query);
-    // Perform search logic here, such as filtering a list or making an API call
+    const filtered = subjects.filter((subject) =>
+      subject.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredSubjects(filtered);
   };
 
   return (
-    <div className="App">
-      <div className="header">
+    <div className="App m-3">
+      <div className="header text-center">
         <h1 className="title">Flash Cards</h1>
         <p>Please select a subject you are interested in learning.</p>
       </div>
-      <SearchBar onSearch={handleSearch} />
-      <Container>{printRowsAndCols()}</Container>
+      <Container>
+        <Row className="justify-content-center">
+          <Col>
+            <SearchBar onSearch={handleSearch} />
+          </Col>
+        </Row>
+        {printRowsAndCols(filteredSubjects)}
+      </Container>
     </div>
   );
 }

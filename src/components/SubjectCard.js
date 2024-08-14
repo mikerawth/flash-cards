@@ -1,14 +1,12 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import "./SubjectCard.css";
+import { Button, Card } from "react-bootstrap";
 
-function SubjectCard(props) {
+function SubjectCard({ title, content }) {
   return (
-    <Card className="SubjectCard">
+    <Card className="mb-4">
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.content}</Card.Text>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{content}</Card.Text>
         <Button variant="primary">Learn More</Button>
       </Card.Body>
     </Card>
