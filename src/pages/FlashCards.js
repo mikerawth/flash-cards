@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SearchBar from "../components/SearchBar";
-import SubjectCard from "../components/SubjectCard";
+import FlashCard from "../components/FlashCard";
 import { getFlashcards } from "../services/apiService";
 
 const FlashCards = () => {
@@ -45,7 +45,7 @@ const FlashCards = () => {
       <Row key={rowIndex}>
         {rowSubjects.map((subject) => (
           <Col key={subject._id} sm={12} md={4}>
-            <SubjectCard title={subject.title} content={subject.content} />
+            <FlashCard title={subject.title} content={subject.content} />
           </Col>
         ))}
       </Row>

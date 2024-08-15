@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-function SubjectCard({ title, content }) {
+function FlashCard({ title, content }) {
   return (
     <Card className="mb-4">
       <Card.Body>
@@ -13,4 +13,4 @@ function SubjectCard({ title, content }) {
   );
 }
 
-export default SubjectCard;
+export default FlashCard;
