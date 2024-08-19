@@ -1,3 +1,4 @@
+// SearchBar.js
 import React, { useState } from "react";
 import { FormControl, InputGroup } from "react-bootstrap";
 
@@ -7,7 +8,10 @@ const SearchBar = ({ onSearch }) => {
   const handleInputChange = (e) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
-    onSearch(newQuery); // Automatically search as input changes
+    if (onSearch) {
+      // Check if onSearch is a function
+      onSearch(newQuery); // Automatically search as input changes
+    }
   };
 
   return (
